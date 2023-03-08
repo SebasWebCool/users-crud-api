@@ -6,9 +6,9 @@ const config = {
     nodeEnv: process.env.NODE_ENV || 'development', //? Desarrollo, Testing, Produccion
     jwtSecret: process.env.JWT_SECRET,
     db: {
-        host: process.env.DB_HOST || 'localhost',
-        username: process.env.DB_USER || 'postgres',
-        password: process.env.DB_PASS || '12345',
+        host: process.env.DB_HOST ,
+        username: process.env.DB_USER ,
+        password: process.env.DB_PASS ,
         dbName: process.env.DB_NAME
     }
 

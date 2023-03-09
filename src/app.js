@@ -1,5 +1,6 @@
 //? Dependencies
 const express = require('express');
+const cors = require('cors')
 const db = require('./utils/database')
 
 //? Files
@@ -11,7 +12,7 @@ const authRouter = require('./auth/auth.router')
 
 //? Initial Configs
 const app = express()
-
+app.use(cors())
 app.use(express.json())
 
 db.authenticate()

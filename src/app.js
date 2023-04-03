@@ -1,4 +1,6 @@
 //? Dependencies
+var moment = require('moment'); // require
+moment().format(); 
 const express = require('express');
 const cors = require('cors')
 const db = require('./utils/database')

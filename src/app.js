@@ -1,23 +1,23 @@
 //? Dependencies
-var moment = require('moment'); // require
+import moment from 'moment'; // require
 moment().format(); 
-const express = require('express');
-const cors = require('cors')
-const db = require('./utils/database')
+import express, { json } from 'express';
+import cors from 'cors';
+import { authenticate, sync } from './utils/database';
 
 //? Files
-const {port} = require('./config');
+import { port } from './config';
 //* Routes
-const userRouter = require('./users/users.router')
-const authRouter = require('./auth/auth.router')
+import userRouter from './users/users.router';
+import authRouter from './auth/auth.router';
 // const initModels = require('./models/initModels')
 
 //? Initial Configs
 const app = express()
 app.use(cors())
-app.use(express.json())
+app.use(json())
 
-db.authenticate()
+authenticate()
     .then(() => {
         console.log('Database Authenticated')
     })
@@ -25,7 +25,7 @@ db.authenticate()
         console.log(err)
     })
 
-db.sync()
+sync()
     .then(() => {
         console.log('Database Synced')
     })

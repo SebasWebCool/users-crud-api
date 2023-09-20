@@ -5,7 +5,7 @@ const db = new Sequelize({
     dialect: 'postgres',
     protocol: 'postgres',
     dialectOptions: {
-        ssl: true,
+        ssl: false,
         native:true
       },
     host: config.db.host, //? Variable de entorno del host

@@ -3,8 +3,9 @@ const config = require('../config')
 
 const db = new Sequelize({
     dialect: 'postgres',
+    protocol: 'postgres',
     dialectOptions: {
-        ssl: false,
+        ssl: true,
         native:true
       },
     host: config.db.host, //? Variable de entorno del host
